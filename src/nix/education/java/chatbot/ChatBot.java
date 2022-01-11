@@ -16,6 +16,12 @@ public class ChatBot {
 
     private Integer chatBotUserAge;
 
+    private static final String QUESTION_1 = "Which keyword is used for accessing the features of a package?";
+
+    private static final String[] ANSWER_1 = {"package", "import", "extends", "export"};
+
+    private static final int CORRECT_ANSWER_1 = 2;
+
     private static final DateFormat DATE_FORMAT = new SimpleDateFormat("yyyy");
 
     private static final Scanner SCANNER = new Scanner(System.in);
@@ -30,6 +36,7 @@ public class ChatBot {
         stage2();
         stage3();
         stage4();
+        stage5();
     }
 
     private void stage1() {
@@ -59,6 +66,27 @@ public class ChatBot {
         for (int i = 0; i <= num; i++) {
             System.out.println(i + " !");
         }
+    }
+
+    private void stage5() {
+        System.out.println("\nPlease ask a question\n");
+        System.out.println(QUESTION_1);
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < ANSWER_1.length; i++) {
+            if (i != ANSWER_1.length - 1) {
+                sb.append(i + 1).append(". ").append(ANSWER_1[i]).append(", ");
+            } else {
+                sb.append(i + 1).append(". ").append(ANSWER_1[i]);
+            }
+        }
+        System.out.println(sb.toString());
+
+        int ans = SCANNER.nextInt();
+        while (ans != CORRECT_ANSWER_1) {
+            System.out.println("Please try again.");
+            ans = SCANNER.nextInt();
+        }
+        System.out.println("Great, you right!");
     }
 
     private int ageCalculation(int remainder3, int remainder5, int remainder7) {
