@@ -29,6 +29,7 @@ public class ChatBot {
         stage1();
         stage2();
         stage3();
+        stage4();
     }
 
     private void stage1() {
@@ -50,6 +51,14 @@ public class ChatBot {
         int remainder7 = SCANNER.nextInt();
         this.chatBotUserAge = ageCalculation(remainder3, remainder5, remainder7);
         System.out.println("Your age is " + this.chatBotUserAge + "; that's a good time to start programming!");
+    }
+
+    private void stage4() {
+        System.out.println("Now I will prove to you that I can count to any number you want.");
+        int num = SCANNER.nextInt();
+        for (int i = 0; i <= num; i++) {
+            System.out.println(i + " !");
+        }
     }
 
     private int ageCalculation(int remainder3, int remainder5, int remainder7) {
